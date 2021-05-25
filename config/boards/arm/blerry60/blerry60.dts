@@ -80,11 +80,11 @@
 #else
 	RC(3,13)
 #endif
-#if defined(BOTTOM_625U) && !defined(BOTTOM_7U) && !defined(BOTTOM_HHKB)
+#if defined(BOTTOM_625U)
 	RC(4,0) RC(4,1) RC(4,2) 		RC(4,6)			RC(4,10) RC(4,11) RC(4,13) RC(4,14)
-#elseif !defined(BOTTOM_625U) && defined(BOTTOM_7U) && !defined(BOTTOM_HHKB)
+#elseif defined(BOTTOM_7U)
 	RC(4,0) RC(4,1) RC(4,2)			RC(4,6)			RC(4,11) RC(4,13) RC(4,14)
-#elseif !defined(BOTTOM_625U) && !defined(BOTTOM_7U) && defined(BOTTOM_HHKB)
+#elseif defined(BOTTOM_HHKB)
 			RC(4,1) RC(4,2)			RC(4,6)			RC(4,11) RC(4,13)
 #else
 	#error Must define one of the following: BOTTOM_625U, BOTTOM_7U, or BOTTOM_HHKB
