@@ -5,13 +5,7 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-// Alternate layout options
-// Comment or uncomment depending on your needs
-#define SPLIT_RIGHT_SHIFT
-#define SPLIT_LEFT_SHIFT
-#define SPLIT_BACKSPACE
-#define ISO_ENTER			// If commented, ANSI enter. If uncommented, ISO enter.
-#define BOTTOM_625U			// Choose between BOTTOM_625U, BOTTOM_7U, or BOTTOM_HHKB
+// See: blerry60.dts for layout options
 
 / {
 	keymap {
@@ -19,42 +13,36 @@
 
 		default_layer {
 // -----------------------------------------------------------------------------------------
-//   | ESC   | 1     | 2     | 3     | 4     | 5     | 6     | 7     | 8     | 9     | 0     | -     | =     | BSPC  | BSPC  | PRSC  |
-//   | TAB   | Q     | W     | E     | R     | T     | Y     | U     | I     | O     | P     | [     | ]     | \     |         PGUP  |
-// |MT(SPACE)| A     | S     | D     | F     | G     | H     | J     | K     | L     | ;     | '     |         ENTER |         PGDN  |
-//   | SHIFT | Z     | X     | C     | V     | B     | B     | N     | M     | ,     | .     | /     | SHIFT |         UP    |
-//   | CTRL  |         ALT   |  LT(SPACE, 1) | BSPC  |   LT(SPACE,1) | ALT   |                                 LEFT  | DOWN  | RIGHT |
+//   | ESC   | 1     | 2     | 3     | 4     | 5     | 6     | 7     | 8     | 9     | 0     | -     | =     | \     | DEL   |
+//   | TAB   | Q     | W     | E     | R     | T     | Y     | U     | I     | O     | P     | [     | ]     | BACKSPACE     |  
+//   | CAPS  | A     | S     | D     | F     | G     | H     | J     | K     | L     | ;     | '     |         ENTER         |
+//   | SHIFT | Z     | X     | C     | V     | B     | N     | M     | ,     | .     | /     |                SHIFT |  FN    |
+//   | CTRL  | GUI   | ALT   |                 SPACE                                                  | ALT   | GUI   | CTRL |
 
 			bindings = <
-    &kp ESC          &kp NUM_1        &kp NUM_2     &kp NUM_3     &kp NUM_4     &kp NUM_5        &kp NUM_6        &kp NUM_7        &kp NUM_8        &kp NUM_9        &kp NUM_0        &kp MINUS        &kp EQL          &kp BKSP         &kp DEL         &kp PSCRN
-    &kp TAB          &kp Q            &kp W         &kp E         &kp R         &kp T            &kp Y            &kp U            &kp I            &kp O            &kp P            &kp LBKT         &kp RBKT         &kp BSLH                         &kp PG_UP
-    &mt LCTRL CAPS   &kp A            &kp S         &kp D         &kp F         &kp G            &kp H            &kp J            &kp K            &kp L            &kp SCLN         &kp QUOT                          &kp ENTER                        &kp PG_DN
-    &kp LSHFT        &kp Z            &kp X         &kp C         &kp V         &kp B            &kp B            &kp N            &kp M            &kp CMMA         &kp DOT          &kp FSLH         &kp RSHFT                         &kp UP
-    &kp LCTRL                         &kp LALT                    &lt FN SPACE  &kp BKSP         &lt FN SPACE     &kp RALT                                                                                              &kp LEFT         &kp DOWN        &kp RIGHT
+    &kp ESC          &kp NUM_1        &kp NUM_2     &kp NUM_3     &kp NUM_4     &kp NUM_5        &kp NUM_6        &kp NUM_7        &kp NUM_8        &kp NUM_9        &kp NUM_0        &kp MINUS        &kp EQL          &kp BSLH         &kp DEL
+    &kp TAB          &kp Q            &kp W         &kp E         &kp R         &kp T            &kp Y            &kp U            &kp I            &kp O            &kp P            &kp LBKT         &kp RBKT         &kp BSPC
+    &kp CAPS         &kp A            &kp S         &kp D         &kp F         &kp G            &kp H            &kp J            &kp K            &kp L            &kp SCLN         &kp QUOT                          &kp ENTER
+    &kp LSHFT        &kp Z            &kp X         &kp C         &kp V         &kp B            &kp N            &kp M            &kp CMMA         &kp DOT          &kp FSLH         &kp RSHFT                         &mo 1
+    &kp LCTRL        &kp LGUI         &kp LALT                    &kp SPACE                                                                                                                            &kp RALT         &kp RGUI        &kp RCTRL
 			>;
-			
-			sensor-bindings = <&inc_dec_kp C_AC_SCROLL_DOWN C_AC_SCROLL_UP>;
-			
 		};
 
 		fn_layer {
 // -----------------------------------------------------------------------------------------
-//   | GRAVE | F1    | F2    | F3    | F4    | F5    | F6    | F7    | F8    | F9    | F10   | F11   | F12   | RESET  | TRANS | MUTE  |
+//   | GRAVE | F1    | F2    | F3    | F4    | F5    | F6    | F7    | F8    | F9    | F10   | F11   | F12   |  TRANS | MUTE  |
 //   | TRANS |RGB_TOG| TRANS |RGB_HUI|RGB_HUD| TRANS | PSCR  | SCLK  | PAUSE | TRANS | TRANS | TRANS | TRANS | RESET  |         NEXT T|
 // |MT(SPACE)|RGB_EFF|RGB_EFR|RGB_SAI|RGB_SAD| TRANS | INS   | HOME  | PG_UP | TRANS | TRANS | TRANS |         TRANS  |         PREV T|
 //   | SHIFT | TRANS | TRANS |RGB_BRI|RGB_BRD| TRANS | TRANS | DEL   | END   | PG_DN | TRANS | TRANS | TRANS |          PG_UP |
 //   | TRANS |         GUI   |         TRANS | TRANS |         TRANS | MENU  |                                 HOME   | PG_DN | END   |
 
 			bindings = <
-    &kp GRAVE        &kp F1           &kp F2           &kp F3          &kp F4          &kp F5        &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &kp F11          &kp F12          &trans           &trans         &kp C_MUTE
-    &trans           &rgb_ug RGB_TOG  &trans           &rgb_ug RGB_HUI &rgb_ug RGB_HUD &trans        &kp PSCRN        &kp SLCK         &kp PAUSE_BREAK  &trans           &trans           &trans           &trans           &trans                          &kp C_PREV
-    &trans           &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SAI &rgb_ug RGB_SAD &trans        &kp INS          &kp HOME         &kp PG_UP        &trans           &trans           &trans                            &trans                          &kp C_NEXT
-    &kp LSHFT        &trans           &trans           &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans        &trans           &kp DEL          &kp END          &kp PG_DN        &trans           &trans           &trans                            &kp PG_UP
-    &trans                            &kp LGUI                         &trans          &trans        &trans           &kp C_MENU                                                                                            &kp HOME         &kp PG_DN      &kp END        
+    &kp GRAVE        &kp F1           &kp F2           &kp F3          &kp F4          &kp F5        &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &kp F11          &kp F12          &trans           &kp INS
+    &bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4  &kp PSCRN        &kp SLCK         &kp PAUSE_BREAK  &trans           &trans           &kp UP           &trans           &trans      
+    &trans           &trans           &trans           &trans          &trans          &trans        &trans           &trans           &trans           &trans           &kp LEFT         &kp RIGHT                         &trans
+    &trans           &trans           &trans           &trans          &trans          &trans        &trans           &trans           &trans           &trans           &kp DOWN         &trans                            &trans
+    &trans           &trans           &trans                           &trans                                                                                                                                 &trans        &trans           &trans
 			>;
-
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
-
 		};
 
 	};
