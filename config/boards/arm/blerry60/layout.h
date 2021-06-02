@@ -4,4 +4,4 @@
 // #define SPLIT_LEFT_SHIFT
 #define SPLIT_BACKSPACE
 // #define ISO_ENTER			// If commented, ANSI enter. If uncommented, ISO enter.
-#define BOTTOM_7U			// Choose between BOTTOM_625U, BOTTOM_7U, or BOTTOM_HHKB
+#define BOTTOM_HHKB			// Choose between BOTTOM_625U, BOTTOM_7U, or BOTTOM_HHKB
