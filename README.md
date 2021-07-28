@@ -33,3 +33,14 @@ Head over to the Actions tab at the top of the repository.
 
 - Drag and drop the UF2 file you unzipped to the mass storage device that appeared.
 - I think it's named NRF52BOOT or something? Whatever the name, there should be a UF2 file inside. Don't delete or anything, just drag and drop the new `blerry60` firmware file to the mass storage device.
+
+## BLErry75
+
+Default BLErry75 layout:
+![Default BLErry75 layout](images/blerry75-default.png)
+
+Basically the same as above, except there is no room for customization (i.e. the layout is fixed).
+
+You can edit the behavior of the rotary encoder by changing `sensor-bindings = <&inc_dec_kp XXXX YYYY;` in `config/boards/arm/blerry75/blerry75.keymap`. `XXXX` and `YYYY` are keycodes.
+
+Currently only one layer is present as I don't see a need for more.
