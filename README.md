@@ -42,5 +42,3 @@ Default BLErry75 layout:
 Basically the same as above, except there is no room for customization (i.e. the layout is fixed).
 
 You can edit the behavior of the rotary encoder by changing `sensor-bindings = <&inc_dec_kp XXXX YYYY;` in `config/boards/arm/blerry75/blerry75.keymap`. `XXXX` and `YYYY` are keycodes.
-
-Currently only one layer is present as I don't see a need for more.
