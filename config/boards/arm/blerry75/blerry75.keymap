@@ -37,7 +37,8 @@
 	&trans          &trans           &trans         &trans       &trans         &trans           &trans           &trans           &trans           &trans           &trans          &trans                             &trans           &rgb_ug RGB_SPD
 	&trans          &trans           &trans         &trans       &trans         &trans           &trans           &trans           &trans           &trans           &trans          &trans                             &rgb_ug RGB_BRI  &trans
 	&trans          &trans           &trans                                                      &rgb_ug RGB_TOG                                    &trans           &trans          &trans            &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF
-
+			>;
+			
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 	};
