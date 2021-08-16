@@ -15,4 +15,5 @@ This repository is for RMI-KB keyboards that use ZMK, specifically the BLErry se
 Check out the available boards in their respective branches. Current available boards:
 
 - `blerry60`
+- `blerry65`
 - `blerry75`
