@@ -15,7 +15,7 @@ This repository is for RMI-KB keyboards that use ZMK, specifically the BLErry se
 ## BLErry65
 
 Default BLErry65 layout:
-![Default BLErry60 layout](images/blerry65-default.png)
+![Default BLErry65 layout](images/blerry65-default.png)
 
 1. Edit the `config/boards/arm/blerry65/layout.h` file to change the layout to suit your needs.
 
